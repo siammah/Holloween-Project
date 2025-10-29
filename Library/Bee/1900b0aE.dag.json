@@ -20618,8 +20618,11 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1545454,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "PayloadLength": 35039,
 =======
+=======
+>>>>>>> Stashed changes
       "PayloadLength": 32698,
 >>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
@@ -20634,7 +20637,11 @@
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "PayloadOffset": 1580580,
+=======
+      "PayloadOffset": 1578239,
+>>>>>>> Stashed changes
 =======
       "PayloadOffset": 1578239,
 >>>>>>> Stashed changes
@@ -21161,7 +21168,11 @@
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "PayloadOffset": 1580676,
+=======
+      "PayloadOffset": 1578335,
+>>>>>>> Stashed changes
 =======
       "PayloadOffset": 1578335,
 >>>>>>> Stashed changes
