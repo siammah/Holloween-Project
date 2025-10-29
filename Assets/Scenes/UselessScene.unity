@@ -351,8 +351,9 @@ GameObject:
   - component: {fileID: 2039572304}
   - component: {fileID: 2039572303}
   - component: {fileID: 2039572302}
+  - component: {fileID: 2039572306}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ItemSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,12 +439,36 @@ Transform:
   m_GameObject: {fileID: 2039572301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2, y: 35.18, z: 10}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2039572306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039572301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93538f0687a7b6543996e1a300cd2dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numCandy: 15
+  numAnimals: 5
+  numGuards: 1
+  candySpawns: []
+  animalSpawns: []
+  guardSpawns: []
+  center: {x: -2, y: 40, z: 10}
+  radiusMax: 50
+  Candy: {fileID: 0}
+  Guard: {fileID: 0}
+  Animal: {fileID: 0}
+  Parent: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
