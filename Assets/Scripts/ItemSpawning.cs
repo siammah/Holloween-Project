@@ -34,11 +34,12 @@ public class ItemSpawning : MonoBehaviour
 
     void fillArray(Vector3[] arr)
     {
-        int r = UnityEngine.Random.Range(0, radiusMax);
-        float theta1 = UnityEngine.Random.Range(0f, Mathf.Deg2Rad * 360);
-        float theta2 = UnityEngine.Random.Range(0f, Mathf.Deg2Rad * 360);
+        
         for (int i = 0; i < arr.Length; i++)
         {
+            int r = UnityEngine.Random.Range(0, radiusMax);
+            float theta1 = UnityEngine.Random.Range(0f, Mathf.Deg2Rad * 360);
+            float theta2 = UnityEngine.Random.Range(0f, Mathf.Deg2Rad * 360);
             arr[i] = new Vector3(Mathf.Cos(theta1) * r, 0, Mathf.Sin(theta2) * r) + center;
         }
     }
