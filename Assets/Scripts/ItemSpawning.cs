@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class ItemSpawning : MonoBehaviour
@@ -27,9 +29,9 @@ public class ItemSpawning : MonoBehaviour
         fillArray(candySpawns);
         fillArray(animalSpawns);
         fillArray(guardSpawns);
+        SpawnType(guardSpawns, Guard);
         SpawnType(candySpawns, Candy);
         SpawnType(animalSpawns, Animal);
-        SpawnType(guardSpawns, Guard);
     }
 
     void fillArray(Vector3[] arr)

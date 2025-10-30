@@ -87,6 +87,7 @@ public class Guard : MonoBehaviour
                 {
                     //Play audio for attack, start possible animation
                     audioSource.PlayOneShot(attackSound);
+                    Animal.honeLocation = transform.position;
 
                 }
                 else if(time > chargeTime)
