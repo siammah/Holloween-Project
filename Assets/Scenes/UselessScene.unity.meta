@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/UselessScene.unity.meta
 guid: 9fc0d4010bbf28b4594072e72b8655ab
+========
+guid: f9f0ec8be9c7ff74e9f4f55ff7e6f236
+folderAsset: yes
+>>>>>>>> UI_Implementation:Assets/Scripts.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
