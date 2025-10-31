@@ -4524,10 +4524,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numCandy: 15
-  numAnimals: 5
-  numGuards: 1
+  numAnimals: 8
+  numGuards: 3
   center: {x: -2, y: 0, z: 10}
-  radiusMax: 50
+  radiusMax: 10
   Candy: {fileID: 613647066}
   Guard: {fileID: 11500000, guid: 1e2e98ba369031e4393cd9d3229a6fe6, type: 3}
   Animal: {fileID: 11500000, guid: b57701f9c127d654f94af23217757196, type: 3}
