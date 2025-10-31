@@ -10,9 +10,7 @@ public class CandyCollectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Find the ScoreManager and add points
             ScoreManager.Instance.AddScore(scoreValue);
-            // Destroy the candy
             Destroy(gameObject);
         }
     }
