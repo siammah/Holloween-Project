@@ -5,14 +5,13 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
-    // current score (read-only from other scripts)
     public int Score { get; private set; } = 0;
-
-    // optional: set true if you want ScoreManager to persist between scenes
     public bool persistAcrossScenes = false;
 
-    // event fired when score changes: subscribers receive the new score
     public event Action<int> OnScoreChanged;
+
+    // Add this inside the class
+    public int winScore = 10; // <-- must be inside the class
 
     void Awake()
     {
@@ -30,16 +29,29 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    // Add points and notify listeners
     public void AddScore(int points)
     {
         if (points == 0) return;
         Score += points;
         Debug.Log($"ScoreManager: Score = {Score}");
         OnScoreChanged?.Invoke(Score);
+
+        // Win check (also inside the class)
+        if (Score >= winScore)
+        {
+            WinGame();
+        }
     }
 
-    // Reset score to zero
+    private void WinGame()
+    {
+        Debug.Log("You Win!");
+        EndScreen endScreen = FindObjectOfType<EndScreen>();
+        if (endScreen != null)
+            endScreen.ShowEndScreen();
+    }
+
+
     public void ResetScore()
     {
         Score = 0;
@@ -47,7 +59,6 @@ public class ScoreManager : MonoBehaviour
         OnScoreChanged?.Invoke(Score);
     }
 
-    // Set score directly (rarely needed)
     public void SetScore(int value)
     {
         Score = value;
