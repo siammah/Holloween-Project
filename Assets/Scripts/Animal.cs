@@ -1,87 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Animal : MonoBehaviour
 {
-    static public Vector3 honeLocation = Vector3.zero;
-    public Vector3 oldHoneLocation = Vector3.zero;
-    public enum State
-    {
-        Roaming,
-        Honing,
-        Chasing
-    }
-    public GameObject Guard;
-    public Transform Player;
-    public State currState = State.Roaming;
-    public Vector3 roamLocation;
-    public float time = 0f;
-    public float maxTime = 10f;
-    public float tooClose = 7f;
-    public float tooFar = 12f;
+    public Transform player;
     public float roamSpeed = 2f;
     public float chaseSpeed = 4f;
-    // Start is called before the first frame update
+    public float detectionRange = 7f;
+    public int damageAmount = 10;
+    private Vector3 roamTarget;
+
     void Start()
     {
-        Guard = transform.parent.GetChild(0).gameObject;
-        roamLocation = new Vector3(Random.Range(-50, 50), Random.Range(1, 30), Random.Range(-50, 50));
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        roamTarget = GetRandomRoamPosition();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        switch (currState)
+        if (player == null) return;
+
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance < detectionRange)
         {
-            case State.Roaming:
-                if(time > maxTime)
-                {
-                    roamLocation = new Vector3(Random.Range(-50, 50), Random.Range(1, 30), Random.Range(-50, 50));
-                    time = 0f;
-                }
-                time += Time.deltaTime;
-                transform.position += (roamLocation - transform.position).normalized * roamSpeed * Time.deltaTime;
-                detectPlayer();
-                break;
-            case State.Honing:
-                if(time > maxTime)
-                {
-                    currState = State.Roaming;
-                }
-                time += Time.deltaTime;
-                transform.position += (honeLocation - transform.position).normalized * chaseSpeed * Time.deltaTime;
-                detectPlayer();
-                break;
-            case State.Chasing:
-                Vector3 playerPos = Player.position - transform.position;
-                transform.position += playerPos.normalized * chaseSpeed * Time.deltaTime;
-                if (playerPos.magnitude > tooFar)
-                {
-                    currState = State.Roaming;
-                }
-                break;
+            // Chase player
+            transform.position += (player.position - transform.position).normalized * chaseSpeed * Time.deltaTime;
+
+            // Deal damage
+            PlayerHealth ph = player.GetComponent<PlayerHealth>();
+            if (ph != null && distance < 1f) // adjust 1f for collision range
+            {
+                ph.TakeDamage(damageAmount);
+            }
         }
-        detectHoning();
-    }
-    void detectPlayer()
-    {
-        Vector3 distance = Player.position - transform.position;
-        if(distance.magnitude < tooClose)
+        else
         {
-            currState = State.Chasing;
+            // Roam
+            transform.position += (roamTarget - transform.position).normalized * roamSpeed * Time.deltaTime;
+
+            if (Vector3.Distance(transform.position, roamTarget) < 1f)
+                roamTarget = GetRandomRoamPosition();
         }
     }
-    void detectHoning()
+
+    Vector3 GetRandomRoamPosition()
     {
-        Debug.Log("Honing");
-        Debug.Log(honeLocation);
-        if (oldHoneLocation != honeLocation)
-        {
-            currState = State.Honing;
-            oldHoneLocation = honeLocation;
-            time = 0f;
-        }
+        return new Vector3(Random.Range(-50, 50), 1, Random.Range(-50, 50));
     }
 }
