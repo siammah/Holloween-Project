@@ -7,6 +7,7 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
+<<<<<<< HEAD
 - path: Assets/Scenes/UselessScene.unity
   isLoaded: 1
   isActive: 0
@@ -19,3 +20,5 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
+=======
+>>>>>>> a9c0dcd1ae099c45ba24045235ad9aadd114fbbf
