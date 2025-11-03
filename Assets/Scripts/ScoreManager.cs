@@ -1,39 +1,46 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
+
     public int Score { get; private set; } = 0;
     public int winScore = 10;
 
-    // Add this event back so ScoreDisplay can subscribe
-    public event Action<int> OnScoreChanged;
-
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void AddScore(int points)
     {
         Score += points;
-
-        // Notify subscribers
-        OnScoreChanged?.Invoke(Score);
+        Debug.Log($"Score: {Score}");
 
         if (Score >= winScore)
         {
-            EndScreen endScreen = FindObjectOfType<EndScreen>();
-            if (endScreen != null)
-                endScreen.ShowMessage("Congrats! You Win!");
+            LoadWinScene();
         }
+    }
+
+    private void LoadWinScene()
+    {
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("WinScene");
     }
 
     public void ResetScore()
     {
         Score = 0;
-        OnScoreChanged?.Invoke(Score);
+        Debug.Log("Score reset to 0");
     }
 }

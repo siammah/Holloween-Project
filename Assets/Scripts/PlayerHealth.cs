@@ -2,29 +2,28 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100f;
+    private float currentHealth;
+    private GameEnd gameOverManager;
 
     void Start()
     {
         currentHealth = maxHealth;
+        gameOverManager = FindObjectOfType<GameEnd>();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
+        currentHealth -= damage;
+
+        if (currentHealth <= 0f)
         {
             Die();
         }
     }
 
-    private void Die()
+    void Die()
     {
-        EndScreen endScreen = FindObjectOfType<EndScreen>();
-        if (endScreen != null)
-            endScreen.ShowMessage("You Died!");
-
-        gameObject.SetActive(false); // disable player
+        gameOverManager.PlayerDied();
     }
 }

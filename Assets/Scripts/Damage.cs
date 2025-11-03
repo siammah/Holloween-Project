@@ -2,27 +2,17 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public int damageAmount = 10;   
-    public float damageCooldown = 1f;     
-    private bool canDamage = true;
+    public float damage = 20f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player") && canDamage)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+            if (player != null)
             {
-                playerHealth.TakeDamage(damageAmount);
-                StartCoroutine(DamageCooldown());
+                player.TakeDamage(damage);
             }
         }
-    }
-
-    private System.Collections.IEnumerator DamageCooldown()
-    {
-        canDamage = false;
-        yield return new WaitForSeconds(damageCooldown);
-        canDamage = true;
     }
 }

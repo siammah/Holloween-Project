@@ -1,28 +1,15 @@
 using UnityEngine;
-using TMPro; // remove if not using TMP
+using TMPro; // Remove if you're using regular Text instead
 
 public class ScoreDisplay : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI scoreText; // Assign in Inspector
+    [SerializeField] private TextMeshProUGUI scoreText;
 
-    private void Start()
+    void Update()
     {
-        // Subscribe to ScoreManager updates
-        if (ScoreManager.Instance != null)
+        if (GameEnd.Instance != null)
         {
-            ScoreManager.Instance.OnScoreChanged += UpdateScoreText;
-            UpdateScoreText(ScoreManager.Instance.Score);
+            scoreText.text = "Score: " + GameEnd.Instance.score;
         }
-    }
-
-    private void OnDestroy()
-    {
-        if (ScoreManager.Instance != null)
-            ScoreManager.Instance.OnScoreChanged -= UpdateScoreText;
-    }
-
-    private void UpdateScoreText(int newScore)
-    {
-        scoreText.text = "Score: " + newScore;
     }
 }
