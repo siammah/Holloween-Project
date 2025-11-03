@@ -3,8 +3,9 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
+    
     private float currentHealth;
-    private GameEnd gameOverManager;
+    public GameEnd gameOverManager;
 
     void Start()
     {

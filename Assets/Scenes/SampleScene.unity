@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2e98ba369031e4393cd9d3229a6fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1641791627}
+  player: {fileID: 1641791639}
   detectionDistance: 8
   loseChaseDistance: 10
   attackDistance: 2
@@ -4152,7 +4152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1269746842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5043,7 +5043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numCandy: 50
-  numAnimals: 0
+  numAnimals: 5
   numGuards: 3
   center: {x: -2, y: 0, z: 10}
   radiusMax: 10
@@ -5294,7 +5294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df1325179b1f054f8b09e22afd410d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endMessage: {fileID: 0}
 --- !u!1001 &1559643970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5650,6 +5649,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  gameOverManager: {fileID: 1269746845}
+--- !u!4 &1641791639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4286937248595956669, guid: 2f79b33e970aa464a978e550662078fc, type: 3}
+  m_PrefabInstance: {fileID: 3357417559446504608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1642192528
 PrefabInstance:
   m_ObjectHideFlags: 0

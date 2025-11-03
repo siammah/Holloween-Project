@@ -22877,13 +22877,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 1545454,
-      "PayloadLength": 35467,
-=======
       "PayloadOffset": 1716395,
-      "PayloadLength": 35737,
->>>>>>> a9c0dcd1ae099c45ba24045235ad9aadd114fbbf
+      "PayloadLength": 35848,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
       "Outputs": [
@@ -22895,11 +22890,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 1581008,
-=======
-      "PayloadOffset": 1752219,
->>>>>>> a9c0dcd1ae099c45ba24045235ad9aadd114fbbf
+      "PayloadOffset": 1752330,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -23156,11 +23147,13 @@
         "Assets/Scripts/Animal.cs",
         "Assets/Scripts/CandyCollectible.cs",
         "Assets/Scripts/Damage.cs",
+        "Assets/Scripts/EnableRetryButton.cs",
         "Assets/Scripts/GameEnd.cs",
         "Assets/Scripts/Guard.cs",
         "Assets/Scripts/ItemSpawning.cs",
         "Assets/Scripts/PlayerHealth.cs",
         "Assets/Scripts/Quit.cs",
+        "Assets/Scripts/RetryButton.cs",
         "Assets/Scripts/ScoreDisplay.cs",
         "Assets/Scripts/ScoreManager.cs",
         "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs",
@@ -23459,13 +23452,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 1581104,
-      "PayloadLength": 9449,
-=======
-      "PayloadOffset": 1752315,
+      "PayloadOffset": 1752426,
       "PayloadLength": 9812,
->>>>>>> a9c0dcd1ae099c45ba24045235ad9aadd114fbbf
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
       "Outputs": [
