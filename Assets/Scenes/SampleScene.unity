@@ -4126,7 +4126,7 @@ GameObject:
   - component: {fileID: 1269746842}
   - component: {fileID: 1269746845}
   m_Layer: 5
-  m_Name: EndScreen
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4198,9 +4198,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269746841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df1325179b1f054f8b09e22afd410d8, type: 3}
+  m_Script: {fileID: 11500000, guid: af6fc1346b95d9d44bd5f753a9297ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  winScore: 10
 --- !u!1 &1294392831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,6 +5273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df1325179b1f054f8b09e22afd410d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endMessage: {fileID: 0}
 --- !u!1001 &1559643970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5626,7 +5629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
 --- !u!1001 &1642192528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8253,8 +8255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45216aec6c94d8644806b53b3ac59679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
-  damageCooldown: 1
+  damage: 20
 --- !u!1001 &2127129382
 PrefabInstance:
   m_ObjectHideFlags: 0
